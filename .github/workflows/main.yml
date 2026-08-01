@@ -13,36 +13,36 @@ on:
 jobs:
   job1:
     name: job1
+    needs: job2
     runs-on: ubuntu-latest      #Github hosted runner
     steps:
-      - name: Running command
+      - name: Running command job1
         run: echo "Hello world"
-      - name: Check os-release
+      - name: Check os-release job1
         run: cat /etc/os-release
-      - name: sleeping
-        run: sleep 20
+      - name: sleeping job1
+        run: sleep 5
 
   job2:
     name: job2
-    needs: job1
     runs-on: macos-14     #Github hosted runner
     steps:
     - name: Running command sleeping mode job2
       run: |
         echo "Hello world job2"
-        sleep 50
+        sleep 10
         ls -ltr
-        hostname
-      
+        hostname    
    
     - name:  chcekout
       uses: actions/checkout@v4
 
     - name: validate
       run: |
-        ls -ltr
+        echo ls -ltr  >> abc.txt
         hostname
-    
+    - name: Upload artifcats
+      uses: actions/upload-artifact@v5.0.0
     
 
     
