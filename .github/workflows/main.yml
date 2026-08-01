@@ -18,7 +18,7 @@ jobs:
   job2:
     name: job2
     needs: job1
-    runs-on: ubuntu-latest      #Github hosted runner
+    runs-on: macos-14     #Github hosted runner
     steps:
     - name: Running command sleeping mode job2
       run: |
