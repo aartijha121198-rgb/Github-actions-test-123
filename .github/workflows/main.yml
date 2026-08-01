@@ -12,5 +12,16 @@ jobs:
         run: echo "Hello world"
       - name: Check os-release
         run: cat /etc/os-release
+      - name: sleeping
+        run: sleep 20
+
+  job2:
+    name: job2
+    runs-on: ubuntu-latest      #Github hosted runner
+    steps:
+      - name: Running command sleeping mode job2
+        run: sleep 50
+        run: echo "Hello world job2"
+      - 
 
     
