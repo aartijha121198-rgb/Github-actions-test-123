@@ -31,7 +31,18 @@ jobs:
       run: |
         echo "Hello world job2"
         sleep 50
+        ls -ltr
+        hostname
       
-      
+   
+    - name:  chcekout
+      uses: actions/checkout@v4
+
+    - name: validate
+      run: |
+        ls -ltr
+        hostname
+    
+    
 
     
