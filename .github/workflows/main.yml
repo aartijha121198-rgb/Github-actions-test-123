@@ -17,11 +17,14 @@ jobs:
 
   job2:
     name: job2
+    needs: job1
     runs-on: ubuntu-latest      #Github hosted runner
     steps:
-      - name: Running command sleeping mode job2
-        run: sleep 50
-        run: echo "Hello world job2"
-      - 
+    - name: Running command sleeping mode job2
+      run: |
+        echo "Hello world job2"
+        sleep 50
+      
+      
 
     
