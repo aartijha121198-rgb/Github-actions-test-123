@@ -1,7 +1,8 @@
 name: My first CI/CD pipeline
 on:
   push:
-      - branches: main
+      branches:
+      -  main
 jobs:
   job1:
     name: job1
