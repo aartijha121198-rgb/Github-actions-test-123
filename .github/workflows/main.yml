@@ -1,0 +1,15 @@
+name: My first CI/CD pipeline
+on:
+  push:
+      - branches: main
+jobs:
+  job1:
+    name: job1
+    runs-on: ubuntu-latest      #Github hosted runner
+    steps:
+      - name: Running command
+        run: echo "Hello world"
+      - name: Check os-release
+        run: cat /etc/os-release
+
+    
