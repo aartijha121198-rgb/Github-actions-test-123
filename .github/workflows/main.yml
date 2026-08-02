@@ -3,8 +3,8 @@ on:
  # push:
  #     branches:
  #    -  main
-  schedule:
-    - cron: "5 * * * *"
+  #schedule:
+   # - cron: "5 * * * *"
   workflow_dispatch:
   push:
     branches:
@@ -30,19 +30,22 @@ jobs:
     - name: Running command sleeping mode job2
       run: |
         echo "Hello world job2"
-        sleep 10
         ls -ltr
         hostname    
    
     - name:  chcekout
       uses: actions/checkout@v4
-
+ 
     - name: validate
       run: |
         echo ls -ltr  >> abc.txt
         hostname
-    - name: Upload artifcats
+
+    - name: upload artifcat
       uses: actions/upload-artifact@v5.0.0
+      with:
+        name: Upload file manually
+        path: ./abc.txt
     
 
     
