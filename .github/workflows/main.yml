@@ -24,7 +24,7 @@ jobs:
         run: sleep 5
 
   job2:
-    name: job2
+    name: job2 Upload artifacts
     runs-on: macos-14     #Github hosted runner
     steps:
     - name: Running command sleeping mode job2
@@ -48,10 +48,6 @@ jobs:
         ls -ltr
         ls -ltr artifacts
 
-
-
-
-        
     - name: Upload Single file
       uses: actions/upload-artifact@v5.0.0
       with:
@@ -83,6 +79,18 @@ jobs:
           ./myArtifact.txt
           artifacts/
           !**/hostname.txt
+
+
+  
+   job3:
+     name: download artifcats job3
+     runs-on: ubuntu-latest
+     steps:
+       - name: Downlaod artifcats
+         uses: actions/download-artifact@v5.0.0
+         with:
+          name: single_file
+          path: ./myArtifact.txt
           
             hostname
     
