@@ -40,13 +40,24 @@ jobs:
       run: |
         echo ls -ltr  >> myArtifact.txt
         mkdir artifacts/
+        echo "This is file1" > artifacts/file1.txt
+        echo "This is file2" > artifacts/file2.txt
+        
+        hostname > artifacts/hostname.txt
+        
+        ls -ltr
+        ls -ltr artifacts
+
+
+
+
+        
     - name: Upload Single file
       uses: actions/upload-artifact@v5.0.0
       with:
          name: single_file
          path: ./myArtifact.txt
-    -  name: List files
-       run: ls -ltr
+   
     -  name: Upload from directory
        uses: actions/upload-artifact@v5.0.0
 
