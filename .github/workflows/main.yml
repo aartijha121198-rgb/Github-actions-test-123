@@ -79,10 +79,7 @@ jobs:
           ./myArtifact.txt
           artifacts/
           !**/hostname.txt
-
-
-  
-   job3:
+  job3:		       
      name: download artifcats job3
      runs-on: ubuntu-latest
      steps:
@@ -91,6 +88,6 @@ jobs:
          with:
           name: single_file
           path: ./myArtifact.txt
-            hostname
+         
     
         
