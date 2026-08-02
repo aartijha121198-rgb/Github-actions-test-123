@@ -1,4 +1,4 @@
-name: My first CI/CD pipeline push pull
+name: My first CI/CD pipeline push pull from feature
 on:
  # push:
  #     branches:
