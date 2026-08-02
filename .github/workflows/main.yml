@@ -91,7 +91,6 @@ jobs:
          with:
           name: single_file
           path: ./myArtifact.txt
-          
             hostname
     
         
