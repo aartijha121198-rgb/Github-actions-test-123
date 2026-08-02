@@ -6,14 +6,15 @@ on:
   #schedule:
    # - cron: "5 * * * *"
   workflow_dispatch:
-  push:
+  pull_request: 
     branches:
-      - feature
+      - main
   
 jobs:
   job1:
     name: job1
     needs: job2
+    if: always()
     runs-on: ubuntu-latest      #Github hosted runner
     steps:
       - name: Running command job1
