@@ -1,4 +1,4 @@
-name: My first CI/CD pipeline
+name: My first CI/CD pipeline push pull
 on:
  # push:
  #     branches:
@@ -8,7 +8,6 @@ on:
   workflow_dispatch:
   push:
     branches:
-      
       - feature
   
 jobs:
