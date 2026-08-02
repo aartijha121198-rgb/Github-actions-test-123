@@ -39,19 +39,23 @@ jobs:
     - name: validate
       run: |
         echo ls -ltr  >> myArtifact.txt
-
+        mkdir artifacts/
     - name: Upload Single file
       uses: actions/upload-artifact@v5.0.0
       with:
          name: single_file
          path: ./myArtifact.txt
-
+    -  name: List files
+       run: ls -ltr
     -  name: Upload from directory
        uses: actions/upload-artifact@v5.0.0
+
        with:
          name: directory_artifacts
          path: artifacts/
-     
+    -  name: List files from directory
+       run: ls -ltr
+       
     -  name: Upload from multiple paths
        uses: actions/upload-artifact@v5.0.0
        with:
