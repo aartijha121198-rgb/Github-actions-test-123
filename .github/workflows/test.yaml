@@ -1,0 +1,23 @@
+name: Pull Request Demo
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Print Branch
+        run: echo "PR is targeting main branch"
+
+      - name: List Repository Files
+        run: ls -ltr
+
+      - name: Display README
+        run: cat README.md
