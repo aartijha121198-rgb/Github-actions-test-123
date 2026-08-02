@@ -81,6 +81,7 @@ jobs:
           !**/hostname.txt
   job3:		       
      name: download artifcats job3
+     needs: job2
      runs-on: ubuntu-latest
      steps:
        - name: Downlaod artifcats
