@@ -38,14 +38,37 @@ jobs:
  
     - name: validate
       run: |
-        echo ls -ltr  >> abc.txt
-        hostname
+        echo ls -ltr  >> myArtifact.txt
 
-    - name: upload artifcat
+    - name: Upload Single file
       uses: actions/upload-artifact@v5.0.0
       with:
-        name: Upload file manually
-        path: ./abc.txt
-    
+         name: single_file
+         path: ./myArtifact.txt
 
+    -  name: Upload from directory
+       uses: actions/upload-artifact@v5.0.0
+       with:
+         name: directory_artifacts
+         path: artifacts/
+     
+    -  name: Upload from multiple paths
+       uses: actions/upload-artifact@v5.0.0
+       with:
+         name: multiple_paths
+         path: |
+           ./myArtifact.txt
+            artifacts/
+
+    - name: Upload from multiple paths with exclusions
+      uses: actions/upload-artifact@v5.0.0
+      with:
+        name: multiple_paths_with_exclusions
+        path: |
+          ./myArtifact.txt
+          artifacts/
+          !**/hostname.txt
+          
+            hostname
     
+        
