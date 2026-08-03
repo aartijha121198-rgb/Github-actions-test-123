@@ -1,4 +1,4 @@
-name: My first CI/CD pipeline push pull from feature
+name: My first CI/CD pipeline push pull from feature test
 on:
  # push:
  #     branches:
@@ -6,9 +6,9 @@ on:
   #schedule:
    # - cron: "5 * * * *"
   workflow_dispatch:
-  pull_request: 
-    branches:
-      - main
+  #pull_request: 
+  #  branches:
+  #    - main
 
   
 jobs:
